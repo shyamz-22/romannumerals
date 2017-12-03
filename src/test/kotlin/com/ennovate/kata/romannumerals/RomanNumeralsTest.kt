@@ -6,32 +6,21 @@ import org.junit.Test
 class RomanNumeralsTest {
 
     @Test
-    fun `prints 1 as I`() {
+    fun `prints basic decimals as roman numerals`() {
         assertThat(RomanNumerals().convert(1)).isEqualTo("I")
+        assertThat(RomanNumerals().convert(5)).isEqualTo("V")
+        assertThat(RomanNumerals().convert(10)).isEqualTo("X")
+        assertThat(RomanNumerals().convert(50)).isEqualTo("L")
     }
 
     @Test
-    fun `prints II for 2`() {
+    fun `prints with addition rules`() {
         assertThat(RomanNumerals().convert(2)).isEqualTo("II")
-    }
-
-    @Test
-    fun `prints III for 3`() {
         assertThat(RomanNumerals().convert(3)).isEqualTo("III")
     }
 
     @Test
-    fun `prints IV for 4`() {
-        assertThat(RomanNumerals().convert(4)).isEqualTo("IV")
-    }
-
-    @Test
-    fun `prints V for 5`() {
-        assertThat(RomanNumerals().convert(5)).isEqualTo("V")
-    }
-
-    @Test
-    fun `prints VI for 6`() {
+    fun `prints complex decimals as roman numerals`() {
         assertThat(RomanNumerals().convert(6)).isEqualTo("VI")
         assertThat(RomanNumerals().convert(7)).isEqualTo("VII")
         assertThat(RomanNumerals().convert(8)).isEqualTo("VIII")
@@ -53,14 +42,6 @@ class RomanNumeralsTest {
         assertThat(RomanNumerals().convert(123)).isEqualTo("CXXIII")
         assertThat(RomanNumerals().convert(1998)).isEqualTo("MCMXCVIII")
         assertThat(RomanNumerals().convert(2345)).isEqualTo("MMCCCXLV")
-    }
-
-    @Test
-    fun timeTaken() {
-        val romans = RomanNumerals()
-        (0 until 3999).forEach{
-           println("$it = ${romans.convert(it)}")
-        }
     }
 }
 
